@@ -1,0 +1,50 @@
+apiVersion: v1
+entries:
+  loki-stack:
+  - apiVersion: v1
+    appVersion: v1.6.0
+    created: "2020-09-08T03:02:12.166292805-07:00"
+    dependencies:
+    - condition: loki.enabled
+      name: loki
+      repository: file://../loki
+      version: ^0.30.0
+    - condition: promtail.enabled
+      name: promtail
+      repository: file://../promtail
+      version: ^0.23.0
+    - condition: fluent-bit.enabled
+      name: fluent-bit
+      repository: file://../fluent-bit
+      version: ^0.1.0
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: ~3.8.15
+    - condition: prometheus.enabled
+      name: prometheus
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: ~9.3.0
+    - condition: filebeat.enabled
+      name: filebeat
+      repository: https://helm.elastic.co
+      version: ~7.8.0
+    - condition: logstash.enabled
+      name: logstash
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: ~2.4.0
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: d69c05ed954bf659878ec55e939076ba65390fa4c4b959ffad7e7edf92a7303d
+    home: https://grafana.com/loki
+    icon: https://github.com/grafana/loki/raw/master/docs/logo.png
+    kubeVersion: ^1.10.0-0
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Loki Maintainers
+    name: loki-stack
+    sources:
+    - https://github.com/grafana/loki
+    urls:
+    - loki-stack-0.40.0.tgz
+    version: 0.40.0
+generated: "2020-09-08T03:02:12.152367706-07:00"
